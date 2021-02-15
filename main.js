@@ -1,73 +1,59 @@
-//var a = 1, b = 1, c, d;
-//c = ++a; alert(c);           // 2 Префиксная форма (сначала к а прибавиться единица, потом будет возвращено с)
-//d = b++; alert(d);           // 1 Постфиксная форма (сначала будет возвращено d, после к b прибавиться единица)
-//c = (2 + ++a); alert(c);      // 5 Здесь уже а=2 и в префиксной форме прибавляем единицу, отсюда и 5
-//d = (2 + b++); alert(d);      // 4 b=2 и в постфиксной форме, отсюда и 4
-//alert(a);                    // 3 До этого 2 раза была прибавлена единица
-//alert(b);                    // 3 До этого 2 раза была прибавлена единица
-
-//var a = 2;
-//var x = 1 + (a *= 2); // Ответ 5
-
-/* let a = -3, b = 2;
-if (a >= 0 && b >= 0) {
-    alert(a - b)
-} else if (a < 0 && b < 0) {
-    alert(a * b)
-} else if ((a >= 0 && b < 0) || (a < 0 && b >= 0)) {
-    alert(a + b)
+"use strict"
+/* progg:
+for (let i = 2; i <= 100; i++) {
+    for (let j = 2; j < i; j++) {
+        if (i % j == 0) continue progg;
+    }
+    console.log(i);
 } */
 
 
-/* let a = 7
-switch (a) {
-    case 1:
-        alert('1,2,3,4,5,6,7,8,9,10,11,12,13,14,15')
-        break;
-    case 2:
-        alert('2,3,4,5,6,7,8,9,10,11,12,13,14,15')
-        break;
-    case 3:
-        alert('3,4,5,6,7,8,9,10,11,12,13,14,15')
-        break;
-    case 4:
-        alert('4,5,6,7,8,9,10,11,12,13,14,15')
-        break;
-    case 5:
-        alert('5,6,7,8,9,10,11,12,13,14,15')
-        break;
-    case 6:
-        alert('6,7,8,9,10,11,12,13,14,15')
-        break;
-    case 7:
-        alert('7,8,9,10,11,12,13,14,15')
-        break;
-    case 8:
-        alert('8,9,10,11,12,13,14,15')
-        break;
-    case 9:
-        alert('9,10,11,12,13,14,15')
-        break;
-    case 10:
-        alert('10,11,12,13,14,15')
-        break;
-    case 11:
-        alert('11,12,13,14,15')
-        break;
-    case 12:
-        alert('12,13,14,15')
-        break;
-    case 13:
-        alert('13,14,15')
-        break;
-    case 14:
-        alert('14,15')
-        break;
-    case 15:
-        alert('15')
-        break;
-    default:
-        break;
-} */
+/* let basket = [1, 2, 4, 5, 6, 45, 23]
+let countBasketPrice = basket.reduce(function (acc, elem) {
+    return acc + elem;
+}, 0)
+console.log(countBasketPrice) */
+
+
+/* for (let i = 0; i <= 9; console.log(i++)) {} */
+
+/* это были задание после 3 урока */
+
+
+/* function P(a) {
+    this.one = (a / 100) - (a % 100) / 100;
+    this.two = (a % 100) / 10 - (a % 10) / 10;
+    this.three = a % 10;
+}
+
+let tr = new P(574)
+
+console.log(tr) */
+
+/* не понял тут, как сделать, чтобы при написании числа больше 999 выдать что либо кроме ошибки */
+
+
+/* function P(name, number, date, price) {
+    this.name = name;
+    this.number = number;
+    this.date = date;
+    this.price = price;
+}
+let basket = [
+    new P("Sam", 123, "19.02", 4583),
+    new P("Sam", 124, "19.02", 8542),
+    new P("Sam", 125, "19.02", 1238),
+    new P("Sam", 126, "19.02", 8632),
+    new P("Sam", 127, "19.02", 6500)
+]
+
+function countBasketPrice(arr) {
+    let sum = 0
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i]["price"]
+    }
+    return sum
+}
+console.log(countBasketPrice(basket)) */
 
 
