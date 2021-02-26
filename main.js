@@ -1,37 +1,3 @@
-"use strict"
-/* progg:
-for (let i = 2; i <= 100; i++) {
-    for (let j = 2; j < i; j++) {
-        if (i % j == 0) continue progg;
-    }
-    console.log(i);
-} */
-
-
-/* let basket = [1, 2, 4, 5, 6, 45, 23]
-let countBasketPrice = basket.reduce(function (acc, elem) {
-    return acc + elem;
-}, 0)
-console.log(countBasketPrice) */
-
-
-/* for (let i = 0; i <= 9; console.log(i++)) {} */
-
-/* это были задание после 3 урока */
-
-
-/* function P(a) {
-    this.one = (a / 100) - (a % 100) / 100;
-    this.two = (a % 100) / 10 - (a % 10) / 10;
-    this.three = a % 10;
-}
-
-let tr = new P(574)
-
-console.log(tr) */
-
-/* не понял тут, как сделать, чтобы при написании числа больше 999 выдать что либо кроме ошибки */
-
 
 /* function P(name, number, date, price) {
     this.name = name;
@@ -54,6 +20,65 @@ function countBasketPrice(arr) {
     }
     return sum
 }
-console.log(countBasketPrice(basket)) */
+console.log(countBasketPrice(basket))
 
+let basket = document.querySelector(".basket");
+ */
+
+let basket = {
+    "product1": {
+        "count": 0,
+        "price": 0
+    },
+    "product2": {
+        "count": 0,
+        "price": 0
+    }
+}
+let menu = document.querySelector(".basket")
+
+menu.onclick = event => {
+    if (event.target.classList.contains("plus")) {
+        plus(event.target.dataset.id);
+    };
+    if (event.target.classList.contains("minus")) {
+        minus(event.target.dataset.id);
+    };
+}
+
+
+const plus = id => {
+    basket[id]['count']++;
+    basket[id]['price'] += 7000;
+    createBasket();
+}
+
+const minus = id => {
+    if (basket[id]['count'] - 1 == 0 || basket[id]['count'] == 0) {
+        deleteCount(id);
+        deletePrice(id);
+        return true;
+    } else {
+        basket[id]['count']--;
+        basket[id]['price'] -= 7000;
+
+    };
+    createBasket();
+}
+
+const deleteCount = id => {
+    delete basket[id]['count'];
+    createBasket();
+}
+
+const deletePrice = id => {
+    delete basket[id]['price'];
+    createBasket();
+}
+
+const createBasket = () => {
+    console.log(basket);
+}
+
+createBasket();
 
